@@ -11,7 +11,6 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        
         return view('admin.user.index', [
             'users' => $users
         ]);
@@ -24,12 +23,79 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->except('_token');
+//        dd($request->all());
+        $data = [
+            'first_name' => $request->input('first_name'),
+            'last_name' => $request->input('last_name'),
+            'email' => $request->input('email'),
+            'password' => bcrypt($request->input('password')),
+            'role' => $request->input('role'),
+            'about' => $request->input('about'),
+        ];
+
+        if ($request->hasFile('image')) {
+            $photo = $request->file('image');
+            $file_name = uniqid('photo__', true) . '.' . $photo->getClientOriginalExtension();
+            $photo->move(public_path('/') . 'uploads/', $file_name);
+            $data['photo'] = $file_name;
+        }
         User::create($data);
 
         return redirect()->route('user.list');
 
     }
 
+    public function edit($id)
+    {
+        $user = User::find($id);
+        return view('admin.user.edit', compact('user'));
+    }
+
+
+    public function update(Request $request, $id)
+    {
+        $user = User::find($id);
+        $data = [
+            'first_name' => $request->input('first_name'),
+            'last_name' => $request->input('last_name'),
+            'email' => $request->input('email'),
+            'role' => $request->input('role'),
+            'about' => $request->input('about'),
+        ];
+
+        if ($request->hasFile('image')) {
+            @unlink(public_path('uploads/') . $user->photo);
+            $photo = $request->file('image');
+            $file_name = uniqid('photo__', true) . '.' . $photo->getClientOriginalExtension();
+            $photo->move(public_path('/') . 'uploads/', $file_name);
+            $data['photo'] = $file_name;
+        }
+
+        try {
+
+            $user->update($data);
+            return redirect()->route('user.list');
+        } catch (\Throwable $exception) {
+            return redirect()->back();
+        }
+
+    }
+
+
+    public function delete($id)
+    {
+        $user = User::find($id);
+
+        try {
+
+            $user->delete();
+            @unlink(public_path('uploads/') . $user->photo);
+            return redirect()->back();
+        } catch (\Throwable $exception) {
+            return redirect()->back();
+        }
+
+
+    }
 
 }

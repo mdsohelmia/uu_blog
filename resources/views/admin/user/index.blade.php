@@ -18,6 +18,7 @@
                     <th class="px-4 py-3">Role</th>
                     <th class="px-4 py-3">Status</th>
                     <th class="px-4 py-3">Date</th>
+                    <th class="px-4 py-3">Action</th>
                 </tr>
                 </thead>
                 <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
@@ -29,7 +30,7 @@
                                 <!-- Avatar with inset shadow -->
                                 <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block">
                                     <img class="object-cover w-full h-full rounded-full"
-                                         src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=200&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
+                                         src="{{asset('uploads/'.$user->photo)}}"
                                          alt="" loading="lazy">
                                     <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
                                 </div>
@@ -70,6 +71,12 @@
                         </td>
                         <td class="px-4 py-3 text-sm">
                             6/10/2020
+                        </td>
+                        <td class="px-4 py-3 text-sm">
+                            <a href="{{route('user.edit',$user->id)}}"
+                               class="bg-blue-500 text-white py-2 px-10 rounded shadow">Edit</a>
+                            <a href="{{route('user.delete',$user->id)}}"
+                               class="bg-red-600 text-white py-2 px-10 rounded shadow">delete</a>
                         </td>
                     </tr>
                 @endforeach

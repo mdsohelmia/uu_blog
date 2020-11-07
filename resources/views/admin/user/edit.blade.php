@@ -2,13 +2,14 @@
 
 @section('main')
 
-    <form action="{{route('user.store')}}" class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800"
+    <form action="{{route('user.update',$user->id)}}"
+          class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800"
           method="post" enctype="multipart/form-data">
         @csrf
         <label class="block text-sm">
             <span class="text-gray-700 dark:text-gray-400">First Name</span>
             <input
-                name="first_name"
+                name="first_name" value="{{$user->first_name}}"
                 class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                 placeholder="Jane Doe">
         </label>
@@ -17,7 +18,7 @@
             <input
                 name="last_name"
                 class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                placeholder="Jane Doe">
+                placeholder="Jane Doe" value="{{$user->last_name}}">
         </label>
 
         <label class="block text-sm">
@@ -28,18 +29,11 @@
                 class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                 placeholder="Jane Doe">
         </label>
-
-        <label class="block text-sm">
-            <span class="text-gray-700 dark:text-gray-400">Password</span>
-            <input
-                name="password"
-                type="password"
-                class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                placeholder="Jane Doe">
-        </label>
-
         <label class="block text-sm">
             <span class="text-gray-700 dark:text-gray-400">Avatar</span>
+            <img class="object-cover h-12 w-12 rounded-full"
+                 src="{{asset('uploads/'.$user->photo)}}"
+                 alt="" loading="lazy">
             <input
                 name="image"
                 type="file"

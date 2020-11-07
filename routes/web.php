@@ -12,6 +12,15 @@ Route::get('/', function () {
 Route::get('dashboard', [DashboardController::class, 'showDashboard'])->name('admin.dashboard');
 Route::get('posts', [PostController::class, 'index'])->name('admin.post');
 
-Route::get('users', [UserController::class, 'index'])->name('user.list');
-Route::get('users/create', [UserController::class, 'create'])->name('user.create');
-Route::post('users/create', [UserController::class, 'store'])->name('user.store');
+
+Route::group(['prefix' => 'users', 'as' => 'user.'], function () {
+    Route::get('/', [UserController::class, 'index'])->name('list');
+    Route::get('create', [UserController::class, 'create'])->name('create');
+    Route::post('create', [UserController::class, 'store'])->name('store');
+    Route::post('{id}/update', [UserController::class, 'update'])->name('update');
+    Route::get('{id}/edit', [UserController::class, 'edit'])->name('edit');
+    Route::get('delete/{id}', [UserController::class, 'delete'])->name('delete');
+
+}); 
+
+
