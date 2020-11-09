@@ -11,6 +11,8 @@ Route::get('/', function () {
 
 Route::get('dashboard', [DashboardController::class, 'showDashboard'])->name('admin.dashboard');
 Route::get('posts', [PostController::class, 'index'])->name('admin.post');
+Route::get('posts/create', [PostController::class, 'create'])->name('post.create');
+Route::post('posts/create', [PostController::class, 'store'])->name('post.store');
 
 
 Route::group(['prefix' => 'users', 'as' => 'user.'], function () {
@@ -21,6 +23,6 @@ Route::group(['prefix' => 'users', 'as' => 'user.'], function () {
     Route::get('{id}/edit', [UserController::class, 'edit'])->name('edit');
     Route::get('delete/{id}', [UserController::class, 'delete'])->name('delete');
 
-}); 
+});
 
 

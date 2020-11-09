@@ -48,6 +48,7 @@
             <div class="mt-2">
                 <label class="inline-flex items-center text-gray-600 dark:text-gray-400">
                     <input type="radio"
+                           {{$user->role == 'admin' ? 'checked': ''}}
 
                            class="text-purple-600 form-radio focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
                            name="role" value="Admin">
@@ -55,6 +56,8 @@
                 </label>
                 <label class="inline-flex items-center ml-6 text-gray-600 dark:text-gray-400">
                     <input type="radio"
+                           {{$user->role == 'writer' ? 'checked': ''}}
+
                            class="text-purple-600 form-radio focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
                            name="role" value="Writer">
                     <span class="ml-2">Writer</span>
@@ -71,9 +74,12 @@
         </label>
 
         <div class="flex justify-between items-center mt-6">
+
             <label class="block text-sm mt-6">
                 <span class="text-gray-700 dark:text-gray-400 mt-6">Status</span>
-                <input name="status" value="1" type="checkbox" class="form-checkbox w-5 h-5">
+
+                <input name="status" {{$user->status ==1 ? 'checked' : ''}}  value="1" type="checkbox"
+                       class="form-checkbox w-5 h-5">
             </label>
             <button class="bg-purple-600 py-2 px-10 rounded text-sm text-white">Save</button>
         </div>

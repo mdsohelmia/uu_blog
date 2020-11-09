@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,12 +23,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9bcbf4f5-1067-4539-8d86-fd9e2e3baf59" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/user/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PostController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/user/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/user/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_27_154937_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_27_154937_create_posts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/post/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/post/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/user/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/user/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/user/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/user/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -186,7 +191,8 @@
       <workItem from="1604048675611" duration="1033000" />
       <workItem from="1604054394912" duration="38000" />
       <workItem from="1604223649752" duration="6601000" />
-      <workItem from="1604726223555" duration="5923000" />
+      <workItem from="1604726223555" duration="6654000" />
+      <workItem from="1604906015646" duration="5436000" />
     </task>
     <servers />
   </component>
@@ -203,24 +209,25 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1604054429148">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1604054429148" />
-    <state x="517" y="288" key="NewPhpFileDialog" timestamp="1604226885850">
+    <state x="517" y="288" key="NewPhpFileDialog" timestamp="1604908581656">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="517" y="288" key="NewPhpFileDialog/0.0.1366.738@0.0.1366.738" timestamp="1604226885850" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1604732035033">
+    <state x="517" y="288" key="NewPhpFileDialog/0.0.1366.738@0.0.1366.738" timestamp="1604908581656" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1604910594072">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1366.738@0.0.1366.738" timestamp="1604732035033" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1604731927662">
+    <state width="498" height="446" key="SwitcherDM/0.0.1366.738@0.0.1366.738" timestamp="1604910594072" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1604909395731">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1604731927662" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1604909395731" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

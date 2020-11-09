@@ -18,7 +18,7 @@ class CreatePostsTable extends Migration
             $table->foreignId('user_id');
             $table->string('title');
             $table->longText('text');
-            $table->boolean('is_approved');
+            $table->boolean('is_approved')->nullable();
             $table->timestamps();
         });
     }
