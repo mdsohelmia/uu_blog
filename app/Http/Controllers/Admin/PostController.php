@@ -38,8 +38,6 @@ class PostController extends Controller
             'title' => $request->title,
             'text' => $request->text
         ];
-
-
         Post::create($data);
         return redirect()->route('admin.post');
 
