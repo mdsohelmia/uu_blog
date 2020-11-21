@@ -2,21 +2,9 @@
 
 
 @section('main')
-    <form action="{{route('post.store')}}" class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800"
+    <form action="{{route('categories.store')}}" class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800"
           method="post" enctype="multipart/form-data">
         @csrf
-
-        <label class="block mt-4 text-sm">
-            <span class="text-gray-700 dark:text-gray-400">Category name</span>
-            <select name="category_id" class="form-select">
-                <option value=''>--select post category --</option>
-                @foreach($categories as $category)
-                    <option value="{{$category->id}}">{{$category->name}}</option>
-                @endforeach
-            </select>
-
-            @error('title') <span class="text-red-700">{{$message}}</span> @enderror
-        </label>
         <label class="block mt-4 text-sm">
             <span class="text-gray-700 dark:text-gray-400">Title</span>
             <input name="title" type="text" class="form-input w-full" value="{{old('title')}}">

@@ -3,6 +3,11 @@
 @section('main')
     <div>
         <a href="{{route('post.create')}}">New Post</a>
+        <form action="{{route('admin.post')}}">
+            <input class="form-input" type="search" placeholder="search" name="search"
+                   value="{{request()->query('search')}}">
+            <button type="submit">search</button>
+        </form>
     </div>
     <div class="w-full overflow-hidden rounded-lg shadow-xs">
         <div class="w-full overflow-x-auto">
@@ -11,6 +16,7 @@
                 <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
                     <th class="px-4 py-3">SN</th>
                     <th class="px-4 py-3">Title</th>
+                    <th class="px-4 py-3">Category Name</th>
                     <th class="px-4 py-3">User</th>
                     <th class="px-4 py-3">Status</th>
                     <th class="px-4 py-3">Date</th>
@@ -28,12 +34,14 @@
                             <div class="flex items-center text-sm">
                                 <div>
                                     <p class="font-semibold">{{$post->title}}</p>
-
                                 </div>
                             </div>
                         </td>
                         <td class="px-4 py-3 text-sm">
-                            {{$post->user_id}}
+                            {{optional($post->category)->name}}
+                        </td>
+                        <td class="px-4 py-3 text-sm">
+                            {{$post->user->first_name}}
                         </td>
                         <td class="px-4 py-3 text-xs">
                         <span
