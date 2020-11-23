@@ -7,9 +7,7 @@ use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return 'home';
-});
+Route::get('/', \App\Http\Controllers\Frontend\HomeController::class)->name('home');
 
 Route::group(['prefix' => 'backend'], function () {
 
@@ -37,8 +35,13 @@ Route::group(['prefix' => 'backend'], function () {
         });
 
     });
-
-
 });
+
+//Route::get('/exception', function () {
+//   throw  new \App\Exceptions\HelloException('Hello Exception');
+//
+//    return view('welcome');
+//
+//});
 
 
