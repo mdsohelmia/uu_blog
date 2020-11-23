@@ -1,5 +1,5 @@
 ```Bash
-git clone  rep
+git clone  https://github.com/sohel1999/uu_blog.git
 ```
 
 ```Bash
